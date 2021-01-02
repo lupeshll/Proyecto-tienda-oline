@@ -1,5 +1,5 @@
 <?php
-echo "<u><br>TREND STOORE</br></u>";
+echo "<br>PROYECTO FINAL: TREND STOORE</br>";
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ echo "<u><br>TREND STOORE</br></u>";
         <title>Trendstoore</title>
 </head>
 <body>
-     <a href ="https://github.com/yoelobregon/proyectoJL/wiki" >link de repositorio github</a>
+     <a href ="https://github.com/yoelobregon/proyectoJL/wiki">Link de repositorio github</a>
 
 
 
