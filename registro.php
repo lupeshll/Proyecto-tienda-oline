@@ -43,7 +43,7 @@
     </div>
 </body>
 </html>
-<script type="text/javascript">
+
 	$(document).ready(function(){
 		$('#registro').click(function(){
 
