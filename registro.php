@@ -50,7 +50,7 @@
 			vacios=validarFormVacio('frmRegistro');
 
 			if(vacios > 0){
-				alert("Debes llenar todos los campos!!");
+                alert("debes rellenar todos los campos");
 				return false;
 			}
 
@@ -60,7 +60,12 @@
 				data:datos,
 				url:"procesos/regLogin/registrarUsuario.php",
 				success:function(r){
-					
+                    alert(r);
+					if(r==1){
+                        alert ("agregado con exito");
+                    }else{
+                        alert("fallo al agregar");
+                    }
 
 				}
 			});
