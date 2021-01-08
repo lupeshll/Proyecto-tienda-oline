@@ -4,7 +4,7 @@
         private $usuario="root";
         private $password="";
         private $bd="ventas";
-        private $puerto="3360";
+        private $puerto="3361";
 
         public function conexion(){
             $conexion=mysqli_connect($this->servidor,
