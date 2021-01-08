@@ -6,6 +6,7 @@
     <title>TrendStoore| Registro de usuario</title>
     <link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
     <script src="librerias/jquery-3.2.1.min.js"></script>
+    <script src="js/funciones.js"></script>
 </head>
 <body style="background-color: gray">
 <br><br><br>
@@ -15,7 +16,7 @@
             <div class="col-sm-4">
                 <div class="panel panel-danger">
                     <div class="panel panel-heading">
-                        Registar Administrador
+                        Registrar Administrador
                     </div>
                     <div class="panel panel-body">
                         <form action="frmRegistro">
@@ -29,7 +30,7 @@
                             <input type="text" class="form-control input-sm" name="password" id="password"> 
 
                             <p></p>
-                            <span class="btn btn-primary">Registrar</span>
+                            <span class="btn btn-primary" id="registro">Registrar</span>
                             <a href="login.php" class="btn btn-default">Log in</a>
                         </form>
                     </div>
@@ -42,3 +43,27 @@
     </div>
 </body>
 </html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#registro').click(function(){
+
+			vacios=validarFormVacio('frmRegistro');
+
+			if(vacios > 0){
+				alert("Debes llenar todos los campos!!");
+				return false;
+			}
+
+			datos=$('#frmRegistro').serialize();
+			$.ajax({
+				type:"POST",
+				data:datos,
+				url:"procesos/regLogin/registrarUsuario.php",
+				success:function(r){
+					
+
+				}
+			});
+		});
+	});
+</script>
