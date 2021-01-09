@@ -19,11 +19,11 @@
                         Registrar Administrador
                     </div>
                     <div class="panel panel-body">
-                        <form action="frmRegistro">
+                        <form action="frmRegistro" method="POST">
                             <label>Nombre</label>
                             <input type="text" class="form-control input-sm" name="nombre" id="nombre">
                             <label>Apellido</label>
-                            <input type="text" class="form-control input-sm" name="apellido" id="nombre">
+                            <input type="text" class="form-control input-sm" name="apellido" id="apellido">
                             <label>Usuario</label>
                             <input type="text" class="form-control input-sm" name="usuario" id="usuario">
                             <label>Password</label>
@@ -43,28 +43,28 @@
     </div>
 </body>
 </html>
-
+<script type="text/javascript">
 	$(document).ready(function(){
 		$('#registro').click(function(){
 
 			vacios=validarFormVacio('frmRegistro');
 
 			if(vacios > 0){
-                alert("debes rellenar todos los campos");
+                alert("Debes rellenar todos los campos");
 				return false;
 			}
 
 			datos=$('#frmRegistro').serialize();
 			$.ajax({
-				type:"POST",
+				type:'POST',
 				data:datos,
 				url:"procesos/regLogin/registrarUsuario.php",
 				success:function(r){
                     alert(r);
 					if(r==1){
-                        alert ("agregado con exito");
+                        alert ("Registro exitoso");
                     }else{
-                        alert("fallo al agregar");
+                        alert("Fallo al agregar registro");
                     }
 
 				}
