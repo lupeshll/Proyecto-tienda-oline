@@ -19,7 +19,7 @@
                         Registrar Administrador
                     </div>
                     <div class="panel panel-body">
-                        <form action="frmRegistro">
+                        <form action="frmRegistro" method="POST">
                             <label>Nombre</label>
                             <input type="text" class="form-control input-sm" name="nombre" id="nombre">
                             <label>Apellido</label>
@@ -56,7 +56,7 @@
 
 			datos=$('#frmRegistro').serialize();
 			$.ajax({
-				type:'post',
+				type:'POST',
 				data:datos,
 				url:"procesos/regLogin/registrarUsuario.php",
 				success:function(r){
