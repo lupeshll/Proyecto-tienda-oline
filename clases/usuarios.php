@@ -8,12 +8,12 @@
             $fecha=date('Y-m-d');
 
             $sql="INSERT into usuarios (
-                                nombre
+                                nombre,
                                 apellido,
                                 email,
                                 password,
                                 fechaCaptura)
-                            values('$datos[0]',
+                            values( '$datos[0]',
                                     '$datos[1]',
                                     '$datos[2]',
                                     '$datos[3]',
