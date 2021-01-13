@@ -33,7 +33,7 @@
                             
                             <buttom type="submit" class="btn btn-danger btn-sm" id="registro"> Registrar</buttom>
                             <!-- <span class="btn btn-primary" type="submit" id="registro">Registrar</span> -->
-                            <!-- <a href="login.php" class="btn btn-default">Log in</a> -->
+                            <a href="login.php" class="btn btn-default">Log in</a> 
                         </form>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
 			vacios=validarFormVacio('frmRegistro');
 
 			if(vacios > 0){
-                alert("Debes rellenar todos los campos");
+                alert("Debes completar todos los campos");
 				return false;
 			}
 
