@@ -19,7 +19,7 @@
                         Registrar Administrador
                     </div>
                     <div class="panel panel-body">
-                        <form action="frmRegistro" method="POST">
+                        <form id="frmRegistro">
                             <label>Nombre</label>
                             <input type="text" class="form-control input-sm" name="nombre" id="nombre">
                             <label>Apellido</label>
@@ -30,8 +30,10 @@
                             <input type="text" class="form-control input-sm" name="password" id="password"> 
 
                             <p></p>
-                            <span class="btn btn-primary" id="registro">Registrar</span>
-                            <a href="login.php" class="btn btn-default">Log in</a>
+                            
+                            <buttom type="submit" class="btn btn-danger btn-sm" id="registro"> Registrar</buttom>
+                            <!-- <span class="btn btn-primary" type="submit" id="registro">Registrar</span> -->
+                            <!-- <a href="login.php" class="btn btn-default">Log in</a> -->
                         </form>
                     </div>
                 </div>
