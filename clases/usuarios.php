@@ -20,6 +20,39 @@
                                     '$fecha')";
             return mysqli_query($conexion,$sql);
         }
+
+        public function loginUser($datos){
+            $c=new conectar();
+            $conexion=$c->conexion();
+            $password=sha1($datos[1]);
+            
+            
+            $_SESSION['usuario']=$datos[0];
+            $_SESSION['iduser']=self::callID($datos);
+
+            $sql="SELECT * from usuarios where email='$datos[0]' 
+                                                and password='$password'";
+            $result=mysqli_query($conexion,$sql);
+
+            if(mysqli_query($result)>0){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+
+        public function callID($datos){
+            $c=new conectar();
+            $conexion=$c->conexion();
+            $password=sha1($datos[1]);
+
+            $sql="SELECT id_usuario from usuarios 
+                    where email='$datos[0]' 
+                    and password='$password'";
+            $result=mysqli_query($conexion,$sql);
+
+            return mysqli_fetch_row($result)[0];
+        }
     }
 
 ?>
