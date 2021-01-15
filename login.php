@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
     <script src="librerias/jquery-3.2.1.min.js"></script>
     <script src="js/funciones.js"></script>
+    
 </head>
 <body style="background-color: gray">
     <br><br><br>
@@ -22,7 +23,7 @@
                         <p>
                             <center><img src="img/logo.png" width="150px" height="150px"></center>
                         </p>
-                        <form action="frmLogin">
+                        <form id="frmLogin">
                             <label>Usuario</label>
                             <input type="text" class="form-control input-sm" name="usuario" id="usuario">
                             <label>Password</label>

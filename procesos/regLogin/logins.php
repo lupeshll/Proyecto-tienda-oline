@@ -1,7 +1,7 @@
 <?php
-session_start();   
-require_once ("../../clases/conexion.php");
-require_once ("../../clases/usuarios.php");
+    session_start(); 
+    require_once ("../../clases/conexion.php");
+    require_once ("../../clases/usuarios.php");
 
 
     $obj= new usuarios();
@@ -11,13 +11,18 @@ require_once ("../../clases/usuarios.php");
 
     //Se debe corregir el acceso 
 
-    //if(isset($_POST['usuario']) && isset($_POST['password'])){
+    //
     // $pass=sha1($_POST['password']);
     if($_SERVER['REQUEST_METHOD']=='POST'){
-            
+    //if(isset($_POST['usuario']) && isset($_POST['password'])) {
+        
         $username = mysql_entities_fix_string($conexion, $_POST['usuario']);
         $pw_temp = mysql_entities_fix_string($conexion, $_POST['password']);
-        $password = password_hash($pw_temp, PASSWORD_DEFAULT);
+        $password=password_hash($pw_temp, PASSWORD_DEFAULT);
+     
+
+        $_SESSION['Usuario'] = $username;
+        
 
         $datos=array(
             $username,
