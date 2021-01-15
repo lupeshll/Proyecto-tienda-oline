@@ -74,7 +74,7 @@ if(mysqli_num_rows($result) > 0){
 				data:datos,
 				url:"procesos/regLogin/registrarUsuario.php",
 				success:function(r){
-                    alert(r);
+                   
 					if(r==1){
                         alert ("Registro exitoso");
                     }else{
