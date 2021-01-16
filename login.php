@@ -1,15 +1,3 @@
-<?php
-    require_once "clases/conexion.php";
-    $obj= new conectar();
-    $conexion=$obj-> conexion();
-
-    $sql="SELECT * from usuarios where email='admin'";
-    $result=mysqli_query($conexion,$sql);
-    $validar=0;
-    if(mysqli_num_rows($result) > 0){
-        $validar=1;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,15 +28,13 @@
                             <input type="text" class="form-control input-sm" name="usuario" id="usuario">
                             <label>Password</label>
                             <input type="password" class="form-control input-sm" name="password" id="password">
-                            <p></p>
-                            
+                            <p></p> 
                             <buttom class="btn btn-default" id="ingresar">Ingresar</buttom>
 
                             <?php if (!$validar): ?>
                             <a href="registro.php" class="btn btn-danger btn-sm">Registrar</a>
                             <?php endif; ?>
-                            
-                        
+
                         </form>
                     </div>
                 </div>
