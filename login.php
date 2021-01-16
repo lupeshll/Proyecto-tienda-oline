@@ -1,5 +1,5 @@
 <?php
-require_once"clases/conexion.php";
+require_once "clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj-> conexion();
 $sql="SELECT * from usuarios where email='admin'";
