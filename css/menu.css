@@ -9,7 +9,7 @@ section {
 }
 
 .affix {
-  padding:0px;
+  padding:10px;
   -webkit-transition:padding 0.2s linear;
   -moz-transition:padding 0.2s linear;  
   -o-transition:padding 0.2s linear;         
