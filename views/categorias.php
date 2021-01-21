@@ -54,6 +54,11 @@
             url:"../procesos/categorias/agregaCategoria.php",
             success:function(r){
                 if(r==1){
+                    //Permite limpiar el form al registar un registro
+                    $('#frmCategorias')[0].reset();
+
+                    $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
+
                     alertife.success("Categoria agregada con exito");
                 }else{ 
                     alertife.error("No se pudo agregar categoria");
