@@ -1,5 +1,15 @@
 <?php
-
+    require_once "clases/conexion.php";
+    $obj= new conectar();
+    $conexion=$obj-> conexion();
+    
+    $sql="SELECT * from usuarios where email='admin'";
+    $result=mysqli_query($conexion,$sql);
+    $validar=0;
+    if(mysqli_num_rows($result) > 0){
+        header("location:login.php");
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
