@@ -13,14 +13,14 @@
     $carpeta='../../archivos/';
     $rutaFinal=$carpeta.$nombreImg;
 
-    $datosImg=array(
+    $datosImg=array(    
         $_POST['categoriaSelect'],
         $nombreImg,
         $rutaFinal
         );
             if(move_uploaded_file($rutaAlmacenamiento, $rutaFinal)){
                  $idimagen=$obj->agregaImagen($datosImg);
-                if($imagen > 0){
+                if($idimagen > 0){
                     $datos[0]=$_POST['categoriaSelect'];
                     $datos[1]=$idimagen;
                     $datos[2]=$iduser;
