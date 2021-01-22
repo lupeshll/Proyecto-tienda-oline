@@ -13,5 +13,15 @@
             return mysqli_query($conexion,$sql);
         }
 
+        public function actualizarCategoria($datos){
+            $c=new conectar();
+            $conexion=$c->conexion();
+
+            $sql="UPDATE  categorias set nombreCategoria='$datos[1]'
+                                    where id_categoria='$datos[0]'";
+
+            echo mysqli_query($conexion,$sql);
+        }
+
     }
 ?>
