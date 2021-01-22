@@ -65,9 +65,9 @@
                 success:function(r){
                     if(r==1){
                         $('#tablaClientesLoad').load("clientes/tablaClientes.php");
-                        alertife.success("Categoria agregada con exito");
+                        alertify.success("Categoria agregada con exito");
                     }else{ 
-                        alertife.error("No se pudo agregar categoria");
+                        alertify.error("No se pudo agregar categoria");
                     }
 
                 }
