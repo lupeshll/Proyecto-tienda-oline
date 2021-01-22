@@ -21,9 +21,6 @@
     ?>
     <tr>
         <td><?php echo $ver[1] ?></td>
-    </tr>
-    <tr>
-        <td></td>
         <td>
             <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#actualizaCategoria" 
             onclick="agregaDatos('<?php echo $ver[0]?>','<?php echo $ver[1]?>')">
@@ -31,11 +28,11 @@
             </span>
         </td>
         <td>
-            <span class="btn btn-danger btn-xs">
+            <span class="btn btn-danger btn-xs" onclick="eliminaCategoria('<?php echo $ver[0]?>')">
                 <span class="glyphicon glyphicon-remove"></span>
             </span>
         </td>
-
+        
     </tr>
     <?php
         endwhile;       
