@@ -78,23 +78,23 @@
 				return false;
 			}
         datos=$('#frmCategorias').serialize();
-            $.ajax({
-                type:"POST",
-                data:datos,
-                url:"../procesos/categorias/agregaCategoria.php",
-                success:function(r){
-                    if(r==1){
-                        //Permite limpiar el form al registar un registro
-                        $('#frmCategorias')[0].reset();
 
-                        $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
+        $.ajax({
+            type:"POST",
+            data:datos,
+            url:"../procesos/categorias/agregaCategoria.php",
+            success:function(r){
+                if(r==1){
+                   //Permite limpiar el form al registar un registro
+                    $('#frmCategorias')[0].reset();
 
-                        alertify.success("Categoria agregada con exito");
-                    }else{ 
-                        alertify.error("No se pudo agregar categoria");
-                    }
+                    $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
 
+                    alertify.success("Categoria agregada con exito");
+                }else{ 
+                    alertify.error("No se pudo agregar categoria");
                 }
+                     
             });
         });
     });

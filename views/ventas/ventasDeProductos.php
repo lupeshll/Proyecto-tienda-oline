@@ -1,4 +1,3 @@
-
 <h4>Vender un Producto</h4>
 <div class="row">
     <div class="col-sm-4">
@@ -28,5 +27,4 @@ $(document).ready(function(){
     $('#productoVenta').select2();
     
 });
-
 </script>
