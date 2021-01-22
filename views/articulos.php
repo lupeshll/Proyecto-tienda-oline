@@ -3,8 +3,6 @@
 
     if(isset($_SESSION['usuario'])){
        
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articulos</title>
     <?php require_once "menu.php"; ?>
+    <?php require_once "../clases/conexion.php";                             
+        $c= new conectar();
+        $conexion=$c->conexion();
+        $sql="SELECT id_categoria,nombreCategoria
+                from categorias";
+        $result=mysqli_query($conexion,$sql);
+    ?>
 </head>
 <body>
     <div class="container">
@@ -23,6 +28,9 @@
                     <label>Categoria</label>
                     <select class="form-control input.sm" id="categoriaSelect" name="categoriaSelect">
                         <option value="A">Selecciona Categoria</option>
+                    <?php while($ver=mysqli_fetch_row($result)):?>
+                        <option value="<?php echo $ver[0]?>"><?php echo $ver[1];?></option>
+                    <?php endwhile; ?>
                     </select>
                     <label>Nombre</label>
                     <input type="text" class="form-control input-sm" id="nombre" name="nombre">
@@ -49,27 +57,38 @@
     $(document).ready(function(){
         $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
         $('#btnAgregarArticulo').click(function(){
-            vacios=validarFormVacio('frmArticulos');
+
+           /* vacios=validarFormVacio('frmArticulos');
 
             if(vacios > 0){
                 alertify.alert("Debes completar todos los campos");
 				return false;
-			}
+			}*/
 
-            datos=$('#frmArticulos').serialize();
-            $.ajax({
-                type:"POST",
-                data:datos,
-                url:"../procesos/articulos/agregaArticulos.php",
-                success:function(r){
-                    if(r==1){
-                        alertify.success("Articulo agregado con exito");
-                    }else{ 
-                        alertify.error("No se pudo agregar articulo");
-                    }
+            var formData = new FormData(document.getElementById("frmArticulos"));
+
+        $.ajax({
+            url: "../procesos/articulos/insertaArticulos.php",
+            type: "post",
+            dataType: "html",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+
+            success:function(r){
+                alert(r);
+                
+                if(r == 1){
+                    $('#frm')[0].reset();
+                    $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
+                    alertify.success("Agregado con exito :D");
+                }else{
+                    alertify.error("Fallo al subir el archivo :(");
                 }
+                }
+                });
             });
-        });
     });
 </script>
 <?php
