@@ -57,22 +57,22 @@
                 alertify.alert("Debes completar todos los campos");
 				return false;
 			}
-        datos=$('#frmClientes').serialize();
-        $.ajax({
-            type:"POST",
-            data:datos,
-            url:"../procesos/clientes/agregaCliente.php",
-            success:function(r){
-                if(r==1){
-                    $('#tablaClientesLoad').load("clientes/tablaClientes.php");
-                    alertife.success("Categoria agregada con exito");
-                }else{ 
-                    alertife.error("No se pudo agregar categoria");
-                }
+            datos=$('#frmClientes').serialize();
+            $.ajax({
+                type:"POST",
+                data:datos,
+                url:"../procesos/clientes/agregaCliente.php",
+                success:function(r){
+                    if(r==1){
+                        $('#tablaClientesLoad').load("clientes/tablaClientes.php");
+                        alertife.success("Categoria agregada con exito");
+                    }else{ 
+                        alertife.error("No se pudo agregar categoria");
+                    }
 
-            }
-        });
-    });
+                }
+            });
+    ||||});
     });
 </script>
 <?php
