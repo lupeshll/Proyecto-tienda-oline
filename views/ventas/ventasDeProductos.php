@@ -25,5 +25,6 @@
 $(document).ready(function(){
     $('#clienteVenta').select2();
     $('#productoVenta').select2();
+    
 });
 </script>
