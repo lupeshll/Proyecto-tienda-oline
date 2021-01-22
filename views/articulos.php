@@ -58,12 +58,12 @@
         $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
         $('#btnAgregarArticulo').click(function(){
 
-           /* vacios=validarFormVacio('frmArticulos');
+            vacios=validarFormVacio('frmArticulos');
 
             if(vacios > 0){
                 alertify.alert("Debes completar todos los campos");
 				return false;
-			}*/
+			}
 
             var formData = new FormData(document.getElementById("frmArticulos"));
 
@@ -77,18 +77,18 @@
             processData: false,
 
             success:function(r){
-                alert(r);
+                
                 
                 if(r == 1){
-                    $('#frm')[0].reset();
+                    $('#frmArticulos')[0].reset();
                     $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
                     alertify.success("Agregado con exito :D");
                 }else{
                     alertify.error("Fallo al subir el archivo :(");
+                    }
                 }
-                }
-                });
             });
+         });
     });
 </script>
 <?php
