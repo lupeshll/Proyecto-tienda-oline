@@ -69,6 +69,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
+
         $('#btnAgregarCategoria').click(function(){
             
             vacios=validarFormVacio('frmCategorias');
@@ -77,31 +78,31 @@
                 alertify.alert("Debes completar todos los campos");
 				return false;
 			}
-        datos=$('#frmCategorias').serialize();
+            datos=$('#frmCategorias').serialize();
 
-        $.ajax({
-            type:"POST",
-            data:datos,
-            url:"../procesos/categorias/agregaCategoria.php",
-            success:function(r){
-                if(r==1){
-                   //Permite limpiar el form al registar un registro
-                    $('#frmCategorias')[0].reset();
+            $.ajax({
+                type:"POST",
+                data:datos,
+                url:"../procesos/categorias/agregaCategoria.php",
+                success:function(r){
+                    if(r==1){
+                    //Permite limpiar el form al registar un registro
+                        $('#frmCategorias')[0].reset();
 
-                    $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
+                        $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
 
-                    alertify.success("Categoria agregada con exito");
-                }else{ 
-                    alertify.error("No se pudo agregar categoria");
+                        alertify.success("Categoria agregada con exito");
+                    }else{ 
+                        alertify.error("No se pudo agregar categoria");
+                    }
+                        
                 }
-                     
             });
         });
     });
 </script>
 
 
-<!-- Script para la funcion btn Actualizar -->
 <script type="text/javascript">
     $(document).ready(function(){
         $('#btnActualizaCategoria').click(function(){
@@ -122,9 +123,9 @@
                 success:function(r){
                     if(r==1){
                         $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
-                        alertify.success("Categoria actualizada con exito");
+                        alertify.success("Categoría actualizada con éxito");
                     }else{ 
-                        alertify.error("No se pudo actualizar la categoria");
+                        alertify.error("No se pudo actualizar la categoría");
                     }
 
                 }
@@ -141,11 +142,31 @@
         $('#categoriaU').val(categoria);
     }
 
+    function eliminaCategoria(idcategoria){
+        alertify.confirm('¿Desea eliminar esta categoría?',
+                    function(){ 
+                        $.ajax({
+                            type:"POST",
+                            data:"idcategoria="+ idcategoria,
+                            url:"../procesos/categorias/eliminarCategoria.php",
+                            success:function(r){
+                                if(r==1){
+                                    $('#tablaCategoriaLoad').load("categoria/tablaCategorias.php");
+                                    alertify.success("Categoría eliminada");
+                                }else{
+                                    alertify.error("No se pudo eliminar categoria");
+                                }
+                            }
+                        });
+                    }, 
+                    function(){ 
+                        alertify.error('Eliminación cancelada')
+                    }
+                );
+    }
 </script>
 <?php
     }else{
         header("location: /proyectoJL/login.php");
-    }
-
-
+    }   
 ?>
