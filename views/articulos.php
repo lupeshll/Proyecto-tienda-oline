@@ -63,9 +63,9 @@
                 url:"../procesos/articulos/agregaArticulos.php",
                 success:function(r){
                     if(r==1){
-                        alertife.success("Agregad con exito");
+                        alertify.success("Articulo agregado con exito");
                     }else{ 
-                        alertife.error("No se pudo agregar ");
+                        alertify.error("No se pudo agregar articulo");
                     }
                 }
             });
