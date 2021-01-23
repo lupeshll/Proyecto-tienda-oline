@@ -62,7 +62,7 @@
             </div>
             <div class="modal-body">
             <form id="frmArticulosU" enctype="multipart/form-data">
-                    <input type="text" id="idArticulo" hidden="" name="">   
+                    <input type="text" id="idArticulo" hidden="" name="idArticulo">   
                     <label>Categoria</label>
                     <select class="form-control input.sm" id="categoriaSelectU" name="categoriaSelectU">
                         <option value="A">Selecciona Categoria</option>
@@ -115,7 +115,52 @@
             
         });
     }
+    function eliminaArticulo(idArticulo){
+        alertify.confirm('¿Desea eliminar este artículo?',
+                    function(){ 
+                        $.ajax({
+                            type:"POST",
+                            data:"idarticulo="+ idArticulo,
+                            url:"../procesos/articulos/eliminarArticulos.php",
+                            success:function(r){
+            
+                                if(r==1){
+                                   $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
+                                    alertify.success("Artículo eliminado");
+                                }else{
+                                    alertify.error("No se pudo eliminar artículo");
+                                }
+                            }
+                        });
+                    }, 
+                    function(){ 
+                        alertify.error('Eliminación cancelada')
+                    }
+        );
+    }
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#btnActualizaArticulo').click(function(){
+            datos=$('#frmArticulosU').serialize();
+            $.ajax({
+                type:"POST",
+                data:datos,
+                url:"../procesos/articulos/actualizaArticulos.php",
+                success:function(r){
+                    if(r==1){
+                        $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
+                        alertify.success("Articulo actualizado con éxito");
+                    }else{
+                        alertify.error("Error al actualizar el articulo");
+                    }
+                }
+            });
+        });    
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
@@ -145,9 +190,9 @@
                 if(r == 1){
                     $('#frmArticulos')[0].reset();
                     $('#tablaArticulosLoad').load("articulos/tablaArticulos.php");
-                    alertify.success("Agregado con exito :D");
+                    alertify.success("Articulo agregado con exito");
                 }else{
-                    alertify.error("Fallo al subir el archivo :(");
+                    alertify.error("Fallo al subir el articulo");
                     }
                 }
             });
