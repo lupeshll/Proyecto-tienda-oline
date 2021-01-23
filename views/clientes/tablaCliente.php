@@ -7,7 +7,7 @@
         <td>Direccion</td>
         <td>Email</td>
         <td>Telefono</td>
-        <td>RFC</td>
+        <td>RUC</td>
         <td>Editar</td>
         <td>Eliminar</td>
     </tr>
