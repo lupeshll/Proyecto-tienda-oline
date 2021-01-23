@@ -94,7 +94,7 @@
 <script type="text/javascript">
     $(window).scroll(function() {
 		if ($(document).scrollTop() > 150) {
-            alert('hi');
+            
 			$('.logo').height(200);
 
 		}
