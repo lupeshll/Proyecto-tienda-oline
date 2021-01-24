@@ -65,5 +65,14 @@
                             return mysqli_query($conexion,$sql);
 
             }
+            public function eliminarCliente($idcliente){
+                $c=new conectar();
+                $conexion=$c->conexion();
+
+                $sql="DELETE from clientes where id_cliente='$idcliente'";
+
+                return mysqli_query($conexion,$sql);
+            }
+
     }
 ?>
