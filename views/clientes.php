@@ -97,7 +97,31 @@ $.ajax({
         $('#rucU').val(dato['ruc']);
     } 
     });
-}</script>
+    }
+function eliminarCliente(idcliente){
+        alertify.confirm('¿Desea eliminar este cliente?',
+                    function(){ 
+                        $.ajax({
+                        type:"POST",
+                        data:"idcliente="+ idcliente,
+                        url:"../procesos/clientes/eliminarCliente.php",
+                        success:function(r){
+                                if(r==1){
+                                    $('#tablaClientesLoad').load("clientes/tablaCliente.php");
+                                    alertify.success("Cliente eliminado");
+                                }else{
+                                    alertify.error("No se pudo eliminar el cliente");
+                                }
+                            }
+                        });
+                    }, 
+                    function(){ 
+                        alertify.error('Eliminación cancelada')
+                    }
+                );
+    }
+
+</script>
 <script type="text/javascript">
     $(document).ready(function(){
 
