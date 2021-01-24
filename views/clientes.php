@@ -42,8 +42,62 @@
     </div>
 </div>
 
+ 
+        <!-- Modal -->
+    <div class="modal fade" id="abremodalClientesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Actualizar Cliente</h4>
+            </div>
+            <div class="modal-body">
+                <form id="frmClientesU">
+                <input type="text" hidden="" id="idclienteU" name="idclienteU">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control input-sm" id="nombreU" name="nombreU">
+                    <label>Apellido</label>
+                    <input type="text" class="form-control input-sm" id="apellidoU" name="apellidoU">
+                    <label>Direccion</label>
+                    <input type="text" class="form-control input-sm" id="direccionU" name="direccionU">
+                    <label>Email</label>
+                    <input type="text" class="form-control input-sm" id="emailU" name="emailU">
+                    <label>Telefono</label>
+                    <input type="text" class="form-control input-sm" id="telefonoU" name="telefonoU">
+                    <label>RUC</label>
+                    <input type="text" class="form-control input-sm" id="rucU" name="rucU">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAgregarClienteU" type="button" class="btn btn-primary" data-dismiss="modal">
+                        Actualizar
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
 </body>
 </html>
+<script type="text/javascript">
+function agregaDatosCliente(idcliente){
+
+$.ajax({
+    type:"POST",
+    data:"idcliente="+idcliente,
+    url:"../procesos/clientes/obtenDatosCliente.php",
+    success:function(r){
+        dato=jQuery.parseJSON(r);
+        $('#idclienteU').val(dato['id_cliente']);
+        $('#nombreU').val(dato['nombre']);
+        $('#apellidoU').val(dato['apellido']);
+        $('#direccionU').val(dato['direccion']);
+        $('#emailU').val(dato['email']);
+        $('#telefonoU').val(dato['telefono']);
+        $('#rucU').val(dato['ruc']);
+    } 
+    });
+}</script>
 <script type="text/javascript">
     $(document).ready(function(){
 
