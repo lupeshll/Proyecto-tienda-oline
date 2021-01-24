@@ -30,8 +30,8 @@
             <input type="text" class="form-control input-sm" id="email" name="email">
             <label>Telefono</label>
             <input type="text" class="form-control input-sm" id="telefono" name="telefono">
-            <label>RUC</label>
-            <input type="text" class="form-control input-sm" id="ruc" name="ruc">
+            <label>RFC</label>
+            <input type="text" class="form-control input-sm" id="rfc" name="rfc">
             <p></p>
             <span class="btn btn-primary" id="btnAgregarCliente">Agregar</span>
         </form>    
@@ -72,7 +72,7 @@
 
                 }
             });
-    ||||});
+    });
     });
 </script>
 <?php
