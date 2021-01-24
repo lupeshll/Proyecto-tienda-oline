@@ -94,9 +94,15 @@
             $.ajax({
                 type:"POST",
                 data:datos,
-                url:"../procesos/",
+                url:"../procesos/usuarios/actualizaUsuario.php",
                 success:function(r){
-
+                    
+                    if(r==1){
+                        $('#tablaUsuariosLoad').load('usuarios/tablaUsuarios.php');
+                        alertify.success("Actualizado exitoso");
+                    }else{
+                        alertify.error("No se pudo actualizar");
+                    }
                 }
             });
         });
