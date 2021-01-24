@@ -1,3 +1,20 @@
+<?php
+require_once "../../clases/conexion.php";
+
+$obj= new conectar();
+$conexion= $obj->conexion();
+
+$sql="SELECT   nombre,
+               apellido,
+               direccion,
+               email,
+               telefono,
+               ruc
+        from clientes";
+    $result=mysqli_query($conexion,$sql);
+?>
+
+
 <div class="table-responsive">
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Clientes</label></caption>
@@ -11,13 +28,14 @@
         <td>Editar</td>
         <td>Eliminar</td>
     </tr>
+    <?php while($ver=mysqli_fetch_row($result)):?>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><?php echo $ver[0]; ?></td>
+        <td><?php echo $ver[1]; ?></td>
+        <td><?php echo $ver[2]; ?></td>
+        <td><?php echo $ver[3]; ?></td>
+        <td><?php echo $ver[4]; ?></td>
+        <td><?php echo $ver[5]; ?></td>
         <td>
             <span class="btn btn-warning btn-xs">
                 <span class="glyphicon glyphicon-pencil"></span>
@@ -29,7 +47,7 @@
             </span>
         </td>
     </tr>
-        
+    <?php endwhile;?>
 
     
 </table>

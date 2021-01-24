@@ -30,8 +30,8 @@
             <input type="text" class="form-control input-sm" id="email" name="email">
             <label>Telefono</label>
             <input type="text" class="form-control input-sm" id="telefono" name="telefono">
-            <label>RFC</label>
-            <input type="text" class="form-control input-sm" id="rfc" name="rfc">
+            <label>RUC</label>
+            <input type="text" class="form-control input-sm" id="ruc" name="ruc">
             <p></p>
             <span class="btn btn-primary" id="btnAgregarCliente">Agregar</span>
         </form>    
@@ -56,14 +56,17 @@
             if(vacios > 0){
                 alertify.alert("Debes completar todos los campos");
 				return false;
-			}
+			} 
             datos=$('#frmClientes').serialize();
+            
             $.ajax({
                 type:"POST",
                 data:datos,
                 url:"../procesos/clientes/agregaCliente.php",
                 success:function(r){
+                   
                     if(r==1){
+                        $('#frmClientes')[0].reset();
                         $('#tablaClientesLoad').load("clientes/tablaCliente.php");
                         alertify.success("Cliente agregado con exito");
                     }else{ 
