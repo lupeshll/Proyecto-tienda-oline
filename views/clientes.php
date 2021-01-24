@@ -132,6 +132,31 @@ $.ajax({
     });
     });
 </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#btnAgregarClienteU').click(function(){
+        datos=$('#frmClientesU').serialize();
+            
+            $.ajax({
+                type:"POST",
+                data:datos,
+                url:"../procesos/clientes/actualizaCliente.php",
+                success:function(r){
+                   
+                    if(r==1){
+                        $('#frmClientes')[0].reset();
+                        $('#tablaClientesLoad').load("clientes/tablaCliente.php");
+                        alertify.success("Cliente actualizado con exito");
+                    }else{ 
+                        alertify.error("No se pudo actualizado al cliente");
+                    }
+
+                }
+            });
+    })
+})
+</script>
 <?php
     }else{
         header("location: /proyectoJL/login.php");
