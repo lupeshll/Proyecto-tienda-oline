@@ -1,3 +1,19 @@
+<?php
+    require_once "../../clases/conexion.php";
+    require_once "../../clases/ventas.php";
+
+    $c= new conectar();
+    $conexion=$c->conexion();
+
+    $obj=new ventas();
+
+    $sql="SELECT id_venta,
+                fechaCompra,
+                id_cliente 
+                from ventas group by id_venta";
+    $result=mysqli_query($conexion,$sql);
+
+?>
 <h4>Reportes y Ventas</h4>
 <div class ="row">
     <div class="col-sm-1"></div>
@@ -13,14 +29,40 @@
                     <td>Ticket</td>
                     <td>Reporte</td>
                 </tr>
+            <?php
+                while($ver=mysqli_fetch_row($result)):
+            ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $ver[0]?></td>
+                    <td><?php echo $ver[1]?></td>
+                    <td>
+                        <?php 
+                            if($obj->nombreCliente($ver[2])==" "){
+                                echo "S/C";
+                            }else{
+                                echo $obj->nombreCliente($ver[2]);
+                            }
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            echo "S/.".$obj->obtenerTotal($ver[0]);
+                        ?>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-danger btn-sm">
+                            Ticket <span class="glyphicon glyphicon-list-alt"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="../procesos/ventas/crearReportePdf.php?idventa=<?php echo $ver[0]?>" class="btn btn-danger btn-sm">
+                            Reporte <span class="glyphicon glyphicon-file"></span>
+                        </a>
+                    </td>
                 </tr>
+            <?php
+                endwhile;
+            ?>
             </table>
         </div>
     </div>
