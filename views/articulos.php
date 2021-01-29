@@ -10,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articulos</title>
+    <link rel="icon" href="../img/logo-icon.ico">
+    
     <?php require_once "menu.php"; ?>
     <?php require_once "../clases/conexion.php";                             
         $c= new conectar();
