@@ -35,13 +35,13 @@
     <title>Reporte Venta</title>
     <style type="text/css">
 		
-@page {
-            margin-top: 0.3em;
-            margin-left: 0.6em;
-        }
-        body{
-            font-size: xx_small;
-        }
+    @page {
+                margin-top: 0.3em;
+                margin-left: 0.6em;
+            }
+            body{
+                font-size: xx_small;
+            }
 	</style>
     </head>
     <body>
