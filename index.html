@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<!-- Required meta tags -->
@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+	<!-- Styles propios -->	
 	<link rel="stylesheet" href="css/styles.css">
 	<!--  -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,6 +19,7 @@
 	<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
 	<title>Trend Stoore</title>
+	<link rel="icon" href="img/logo-icon.ico">
 </head>
 
 <body>
@@ -38,7 +40,7 @@
 						<a class="nav-link" href="#" id="inicio">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" id="nosotros">Nosotros</a>
+						<a class="nav-link" href="#about" id="nosotros">Nosotros</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -46,27 +48,30 @@
 							Ropas
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#" id="rdama">Damas</a>
+							<a class="dropdown-item" href="#clothes" id="rdama">Damas</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#" id="rcaballero">Caballeros</a>
+							<a class="dropdown-item" href="#clothes" id="rcaballero">Caballeros</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#" id="niños">Niños</a>
+							<a class="dropdown-item" href="#clothes" id="niños">Niños</a>
 						</div>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" id="tendencia">Tendencias</a>
+						<a class="nav-link" href="#tendency" id="tendencia">Tendencias</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" id="sale">
+						<a class="nav-link" href="#discount" id="sale">
 							Sale
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" id="contacto">Contactanos</a>
+						<a class="nav-link" href="#contact" id="contacto">Contactanos</a>
 					</li>
 					<li class="nav-item">
-						<button class="btn btn-sm btn-outline-secondary" type="button" id="">Log
-							in</button>
+						
+						<button class="btn btn-sm btn-outline-secondary" type="button" id="">
+							<a href="login.php">Log in</a>
+							
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -77,17 +82,17 @@
 			<div class="content-center topmargin-lg">
 				<h1>Trend Stoore, luce a la moda.</h1>
 				<p>Viste con las ultimas tendencias en ropas y accesorios de acuerdo a tu estilo.</p>
-				<a href="#" class="btn btn-light topmargin-sm">
+				<a href="#about" class="btn btn-light topmargin-sm">
 					Comience ahora <ion-icon id="start" name="arrow-down-circle"></ion-icon>
 				</a>
 			</div>
 		</div>
 	</section>
 
-	<section id="nosotros" class="bg-light-grey">
+	<section id="about" class="bg-light-grey">
 		<div class="container">
 			<div class="content-center">
-				<h2>Una de las tiendas de ropas con los mejores estilos <b>Trend Stoore</b> </h2>
+				<h2>Una de las tiendas de ropas con los mejores estilos es <b>Trend Stoore</b> </h2>
 				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae fuga porro mollitia
 					rem accusamus enim eius iure earum quasi, sunt ea eligendi consequuntur dolores
 					quidem corporis labore commodi. Odit, quia!</p>
@@ -151,7 +156,7 @@
 
 	</section>
 
-	<section id="ropa">
+	<section id="clothes">
 		<div class="container-fluid">
 			<div class="content-center">
 				<h2>Lorem ipsum dolor sit amet consectetur <b>adipisicing elit.</b> </h2>
@@ -171,7 +176,7 @@
 								<p>Poleras | Shorts | Crops</p>
 							</a>
 						</div>
-						<img src="img/hero1.jpg" class="img-fluid" alt="ropa 1">
+						<img src="img/d_1.jpg" class="img-fluid" alt="ropa 1">
 					</div>
 				</div>
 
@@ -182,10 +187,10 @@
 								<h2>Ropas | Caballeros</h2>
 							</a>
 							<a href="#">
-								<p>Poleras | Shorts | Crops</p>
+								<p>Poleras | Joggers | Jeans</p>
 							</a>
 						</div>
-						<img src="img/hero1.jpg" class="img-fluid" alt="ropa 2">
+						<img src="img/c_1.jpg" class="img-fluid" alt="ropa 2">
 					</div>
 				</div>
 
@@ -199,7 +204,7 @@
 								<p>Poleras | Shorts | Crops</p>
 							</a>
 						</div>
-						<img src="img/hero1.jpg" class="img-fluid" alt="ropa 3">
+						<img src="img/na_1.jpg" class="img-fluid" alt="ropa 3">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -212,7 +217,7 @@
 								<p>Poleras | Shorts | Crops</p>
 							</a>
 						</div>
-						<img src="img/hero1.jpg" class="img-fluid" alt="ropa 4">
+						<img src="img/no_1.jpg" class="img-fluid" alt="ropa 4">
 					</div>
 				</div>
 
@@ -225,13 +230,10 @@
 		</div>
 	</section>
 
-	<section id="tendencia">
+	<section id="tendency">
 		<div class="container">
 			<div class="content-center">
 				<h2>Los mejores estilos para <b>tu outfit favorito.</b> </h2>
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae fuga porro mollitia
-					rem accusamus enim eius iure earum quasi, sunt ea eligendi consequuntur dolores
-					quidem corporis labore commodi. Odit, quia!</p>
 			</div>
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -241,8 +243,8 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<p>Poleras oversize</p>
-						<img class="d-block w-100" src="img/hero1.jpg" alt="First slide">
+						<p>Outfit casuales para damas</p>
+						<img class="d-block w-100" src="img/cr_2.jpg" alt="First slide">
 						<!-- <div class="raiting">
 							<ul class="list-inline">
 								<li class="list-inline-item"><ion-icon name="star"></ion-icon></li>
@@ -254,12 +256,24 @@
 						</div> -->
 					</div>
 					<div class="carousel-item">
-						<p>Poleras oversize</p>
-						<img class="d-block w-100" src="img/hero1.jpg" alt="First slide">
+						<p>Joggers para caballeros</p>
+						<img class="d-block w-100" src="img/cr_4.jpg" alt="First slide">
 					</div>
 					<div class="carousel-item">
-						<p>Poleras oversize</p>
-						<img class="d-block w-100" src="img/hero1.jpg" alt="First slide">
+						<p>Palazos en colores</p>
+						<img class="d-block w-100" src="img/cr_6.jpg" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<p>Joggers para damas</p>
+						<img class="d-block w-100" src="img/cr_5.jpg" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<p>Outfits casuales para caballeros</p>
+						<img class="d-block w-100" src="img/cr_10.jpg" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<p>Joggers de jeans para damas</p>
+						<img class="d-block w-100" src="img/cr_7.jpg" alt="First slide">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -275,13 +289,12 @@
 		</div>
 	</section>
 
-	<section id="sale" class="divider">
+	<section id="discount" class="divider">
 		<div class="container">
 			<div class="content-center">
 				<h2>Los mejores descuentos estan en <b>Trend Stoore.</b> </h2>
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae fuga porro mollitia
-					rem accusamus enim eius iure earum quasi, sunt ea eligendi consequuntur dolores
-					quidem corporis labore commodi. Odit, quia!</p>
+				<p>Las compras pueden ser por mayor y menor. Los descuentos aplican con 
+					cualquier medio de pago.</p>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
@@ -322,39 +335,37 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 topmargin-sm">
-					<h3>Si estas interesado en uno de las prendas <b>solo deja un mensaje</b></h3>
-					<p>Uno de nuestros consultores se comunicaran contigo.</p>
+					<h3>Si estas interesado en uno de las prendas o los outfits <b>solo deja un mensaje</b></h3>
+					<p>Uno de nuestros consultores <b>Trend Stoore</b> se comunicaran contigo.</p>
 				</div>
 				<div class="col-md-6 topmargin-sm">
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Nombre" name="" id="">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Apellidos" name="" id="">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Nombre" name="" id="">
-							</div>
-						</div>
-						<div class="col-md-12">
-							<form class="form-group" action="">
-								<input type="email" class="form-control" placeholder="Email" id="">
-							</form>
-						</div>
-						<div class="col-md-12">
-							<form class="form-group" action="">
-								<input type="telefono" class="form-control" placeholder="Telefono (opcional)" id="">
-							</form>
-            </div>
-            <div class="col-md-12">
-							<a href="#" class="btn btn-dark full-width">Contactanos</a>
-						</div>
+						<form id="contact-form" class="contact" name="contact-form" action="enviar.php">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Nombres y Apellidos" name="nombre" id="nombre">
+                </div>
+              </div>
+                        
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+                </div>
+              </div>
+              
+              <div class="col-md-12">
+                <div class="form-group">
+                  <textarea placeholder="Mensaje" cols="74" rows="10" name="mensaje" id="mensaje"></textarea>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <center>
+                  <button type="submit" class="btn btn-primary" style="background-color: black; border-color: white;">
+                    Enviar
+                  </button>
+                </center>
+              </div>
+            </form>
 					</div>
 				</div>
 			</div>
@@ -366,11 +377,11 @@
       <img class="img-responsive " src="img/logo2.png" width="100" height="100" class="d-inline-block align-top" alt="">
       <ul class="list-inline">
         <li class="list-inline-item footer-menu"><a href="#">Inicio</a></li>
-        <li class="list-inline-item footer-menu"><a href="#">Nosotros</a></li>
-        <li class="list-inline-item footer-menu"><a href="#">Ropas</a></li>
-        <li class="list-inline-item footer-menu"><a href="#">Tendencias</a></li>
-        <li class="list-inline-item footer-menu"><a href="#">Sale</a></li>
-        <li class="list-inline-item footer-menu"><a href="#">Contactanos</a></li>
+        <li class="list-inline-item footer-menu"><a href="#about">Nosotros</a></li>
+        <li class="list-inline-item footer-menu"><a href="#clothes">Ropas</a></li>
+        <li class="list-inline-item footer-menu"><a href="#tendency">Tendencias</a></li>
+        <li class="list-inline-item footer-menu"><a href="#discount">Sale</a></li>
+        <li class="list-inline-item footer-menu"><a href="#contact">Contactanos</a></li>
       </ul>
       <small>@2021 Todos los derechos reservados.</small>
     </div>
