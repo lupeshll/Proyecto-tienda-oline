@@ -33,6 +33,9 @@
     <html>
     <head>
     <title>Reporte Venta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style type="text/css">
 		
         @page {
@@ -45,7 +48,7 @@
 	</style>
     </head>
     <body>
-        <p>El pepe</p>
+        <p>Trend Stoore</p>
         <p>
             Fecha:<?php echo $fecha; ?>
         </p>
@@ -53,9 +56,9 @@
             Folio:<?php echo $folio ?>
         </p> 
         <p> 
-            cliente:<?php echo $objv->nombreCliente($idcliente); ?>  
+            Cliente:<?php echo $objv->nombreCliente($idcliente); ?>  
         </p>
-        <table  style="border-collapce: collapce;"border="1">
+        <table  style="border-collapce: collapce;" border="1">
             <tr>
             <td>Nombre</td>
             <td>Precio</td>
@@ -78,15 +81,15 @@
 
             ?>
             <tr>
-            <td><?php=echo $mostrar[3];?></td>
-            <td><?php=echo $mostrar[4] ?></td>
+                <td><?php echo $mostrar[3];?></td>
+                <td><?php echo $mostrar[4] ?></td>
             </tr>
             <?php
             $total=$total + $mostrar[4];
                 }
             ?>
             <tr>
-                <td>Total: <?php echo "$".$total?></td>
+                <td>Total: <?php echo "S/.".$total?></td>
             </tr>
         </table>
      
