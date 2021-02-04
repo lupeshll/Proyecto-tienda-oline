@@ -1,7 +1,9 @@
 <?php
     // Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
 require_once '../../librerias/dompdf/autoload.inc.php';
+
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 $id=$_GET['idventa'];
 // Introducimos HTML de prueba
@@ -22,9 +24,11 @@ function file_get_contents_curl($url) {
  $html=file_get_contents("http://localhost/proyectoJL/views/ventas/reporteVentaPdf.php?idventa=".$id);
 
 
- 
-// Instanciamos un objeto de la clase DOMPDF.
-$pdf = new DOMPDF();
+ // Instanciamos un objeto de la clase DOMPDF.
+$options=new Options();
+$options->set('isRemoteEnabled', TRUE);
+
+$pdf = new DOMPDF($options);
  
 // Definimos el tamaño y orientación del papel que queremos.
 $pdf->set_paper("letter", "portrait");

@@ -34,10 +34,12 @@
     <html>
     <head>
             <title>Reporte Venta</title>
-            <link rel="stylesheet" type="text/css" href="../../librerias/bootstrap/css/bootstrap.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </head>
     <body>
-        <img src="../../img/logo.png" width="200" height="200">
+        <img src="../p" width="200" height="200">
         <br>
         <table class="table">
             <tr>
@@ -47,7 +49,7 @@
                 <td>Folio:<?php echo $folio ?></td>
             </tr>
             <tr>
-                <td>cliente:<?php echo $objv->nombreCliente($idcliente); ?></td>
+                <td>Cliente:<?php echo $objv->nombreCliente($idcliente); ?></td>
             </tr>
         </table>
      
@@ -87,7 +89,7 @@
             endwhile;
             ?>
             <tr>
-                <td>Total= <?php echo "$".$total; ?></td>
+                <td>Total = <?php echo "S/. ".$total; ?></td>
             </tr>
         </table>
     </body>
