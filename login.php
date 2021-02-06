@@ -32,10 +32,13 @@
                 <div class="panel" style="border: 2px solid #ffffff;">
                     <div class="panel panel-heading" style="background-color: black;font-size: 15px; color: #ffffff;">
                         Trend Stoore -
+                        <a href="index.html" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-home"></span></a>
                     </div>
                     <div class="panel panel-body">
                         <p>
                             <center><img src="img/logo1.png" width="150px" height="150px"></center>
+                            
                         </p>
                         <form id="frmLogin">
                             <label>Usuario</label>

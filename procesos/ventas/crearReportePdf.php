@@ -26,7 +26,7 @@ function file_get_contents_curl($url) {
 
  // Instanciamos un objeto de la clase DOMPDF.
 $options=new Options();
-$options->set('isRemoteEnabled', TRUE);
+$options->set('isRemoteEnabled', true);
 
 $pdf = new DOMPDF($options);
  
