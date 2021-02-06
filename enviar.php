@@ -11,7 +11,7 @@
     $mensaje="Este mensaje fue enviado por ".$nombre.",\r\n";
     $mensaje.="Su e-mail es: ".$email." \r\n";
     $mensaje.="Mensaje: ".$_POST['mensaje']." \r\n";;
-    $mensaje.="Enviado el ".date('d/m/Y',time);
+    $mensaje.="Enviado el ".date('d/m/Y',time());
 
 
     $para='1005220182@unajma.edu.pe';
