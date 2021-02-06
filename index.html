@@ -66,13 +66,18 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#contact" id="contacto">Contactanos</a>
 					</li>
-					<li class="nav-item">
-						
-						<button class="btn btn-sm btn-outline-secondary" type="button" id="">
-							<a href="login.php">Log in</a>
-							
-						</button>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Inicia sesión
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="login.php" id="rdama">Empleado Trend</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="login_cliente/inicio.php" id="rcaballero">Cliente Trend</a>
+						</div>
 					</li>
+					
 				</ul>
 			</div>
 		</div>
@@ -169,7 +174,7 @@
 				<div class="col-md-6">
 					<div class="ropa-container">
 						<div class="ropa-details">
-							<a href="#">
+							<a href="rdama.html">
 								<h2>Ropas | Damas</h2>
 							</a>
 							<a href="#">
@@ -337,7 +342,7 @@
 				</div>
 				<div class="col-md-6 topmargin-sm">
 					<div class="row">
-						<form id="contact-form" class="contact" name="contact-form" action="enviar.php">
+						<form id="contact-form" class="contact" name="contact-form"  method="post" action="enviar.php">
               <div class="col-md-12">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Nombres y Apellidos" name="nombre" id="nombre">
