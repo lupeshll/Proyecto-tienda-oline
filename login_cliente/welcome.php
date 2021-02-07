@@ -75,9 +75,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#tendency" id="tendencia">Tendencias</a>
 					</li>
-                    <?php if($_SESSION['tipo_usuario'] == 1){?>
+                    <?php if($_SESSION['tipo_usuario'] == 2){?>
 					<li class="nav-item">
-						<a class="nav-link" href="#discount" id="sale">
+						<a class="nav-link" href="" id="sale">
 							Sale
 						</a>
 					</li>
@@ -109,6 +109,18 @@
 		</div>
 	</section>
     
-    
+    <section id="footer" class="bg-dark">
+    <div class="container">
+      <img class="img-responsive " src="../img/logo2.png" width="100" height="100" class="d-inline-block align-top" alt="">
+      <ul class="list-inline">
+        <li class="list-inline-item footer-menu"><a href="index.html">Inicio</a></li>
+        <li class="list-inline-item footer-menu"><a href="about.html">Nosotros</a></li>
+        <li class="list-inline-item footer-menu"><a href="#">Ropas</a></li>
+        <li class="list-inline-item footer-menu"><a href="tendency.html">Tendencias</a></li>
+        <li class="list-inline-item footer-menu"><a href="contacto.html">Contactanos</a></li>
+      </ul>
+      <small>@2021 Todos los derechos reservados.</small>
+    </div>
+  </section>
 </body>
 </html>
