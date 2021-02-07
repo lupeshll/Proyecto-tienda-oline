@@ -66,16 +66,13 @@
 </html>
 
 <script type="text/javascript">
-    
-
     Swal.fire({
         icon: 'info',
-        title: 'Toma en cuenta Empleado Trend',
+        title: 'Buen día Empleado Trend',
         text: 'Si eres parte de la empresa inicia sesión con tu usuario asignado;'+
-                'sin embargo toma en cuenta que el login de la empresa Trend Stoore'+
+                'además, toma en cuenta que el acceso al sistema de la empresa Trend Stoore'+
                 ' es manejado por el administrador. Por otro lado, para la visualización del sistema'+
                 ' se habilito el siguiente usuario: admin y contraseña:admin.',
-        
     });
 </script>	
 <script type="text/javascript">

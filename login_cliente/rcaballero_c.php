@@ -1,0 +1,695 @@
+<?php
+    session_start();
+	require 'funcs/conexion.php';
+	require 'funcs/funcs.php';
+
+    if(!isset($_SESSION["id_usuario"])){
+        header("location: inicio.php");
+    }
+
+    $idUsuario = $_SESSION['id_usuario'];
+
+    $sql = "SELECT id , nombre FROM users_clientes WHERE id='$idUsuario'";
+    $result = $mysqli->query($sql);
+    
+    $row=$result->fetch_assoc();
+    
+?>
+<?php if($_SESSION['tipo_usuario'] == 2){?>
+<!doctype html>
+<html lang="es">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Styles propios -->
+	<link rel="stylesheet" href="styles.css">
+	<!--  -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+	<title>Trend Stoore</title>
+	<link rel="icon" href="img/logo-icon.ico">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img class="img-responsive " src="../img/logo2.png" width="70" height="70"
+					class="d-inline-block align-top" alt="">
+				Trend Stoore
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<ion-icon class="btn-menu" name="menu-outline"></ion-icon>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="welcome.php" id="inicio">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about_c.php" id="nosotros">Nosotros</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Ropas
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="rdama_c.php" id="rdama">Damas</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="rcaballero_c.php" id="rcaballero">Caballeros</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="niños_c.php" id="niños">Niños</a>
+						</div>
+					</li>
+					<?php if($_SESSION['tipo_usuario'] == 2){?>
+					<li class="nav-item">
+						<a class="nav-link" href="tendency.php" id="tendencia">Tendencias</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="sale.php" id="sale">
+							% Descuentos
+						</a>
+					</li>
+					<?php } ?>
+					<li class="nav-item">
+						<a class="nav-link" href="contacto.php" id="contacto">Contactanos</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="logout.php">Cerrar Session</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section id="clothes" style="background-color: black">
+		<div class="container-fluid">
+			<div class="content-center">
+				<h2 style="color: #f3f3f3"> Ropas variadas de estreno por temporada para caballeros en <b>Trend
+						Stoore</b>
+				</h2>
+				<p style="color: #c7c3c3">Las imagenes de los productos son referenciales y las promociones tienen un
+					stock mínimo.
+					<i>Cualquier pedido bajo consulta el area de <b>Contactanos</b></i>.
+				</p>
+			</div>
+
+			<div class="col-md-12">
+				<center>
+					<h2 style="color: #f3f3f3"><b> Variedad de Jeans </b> </h2>
+				</center>
+				<br>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jeans Gray Bull</h2>
+							</a>
+							<a href="#">
+								<p>S/. 200</p>
+							</a>
+						</div>
+						<img src="../img/jean4_v.png" width="450" height="400" class="img-fluid" alt="ropa 4">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Flow Black</h2>
+							</a>
+							<a href="#">
+								<p>S/. 180</p>
+							</a>
+						</div>
+						<img src="../img/jean2_v.png" width="450" height="400" class="img-fluid" alt="ropa 2">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Jasper</h2>
+							</a>
+							<a href="#">
+								<p>S/. 140</p>
+							</a>
+						</div>
+						<img src="../img/jean1_v.png" width="450" height="400" class="img-fluid" alt="ropa 1">
+					</div>
+				</div>
+
+
+
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Versma Classic</h2>
+							</a>
+							<a href="#">
+								<p>S/. 150</p>
+							</a>
+						</div>
+						<img src="../img/jean3_v.png" width="450" height="400" class="img-fluid" alt="ropa 3">
+					</div>
+				</div>
+
+
+
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Bassic Men</h2>
+							</a>
+							<a href="#">
+								<p>S/. 190</p>
+							</a>
+						</div>
+						<img src="../img/jean5_v.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Sky Dream</h2>
+							</a>
+							<a href="#">
+								<p>S/. 180</p>
+							</a>
+						</div>
+						<img src="../img/jean6_v.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Coppic Men</h2>
+							</a>
+							<a href="#">
+								<p>S/. 190</p>
+							</a>
+						</div>
+						<img src="../img/hombre2.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="ropa-container">
+						<div class="ropa-details">
+							<a href="#">
+								<h2>Jean Dark Blue</h2>
+							</a>
+							<a href="#">
+								<p>S/. 160</p>
+							</a>
+						</div>
+						<img src="../img/jean7_v.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<center>
+						<br><br><br>
+						<h2 style="color: #f3f3f3"><b> Variedad de Casacas </b> </h2>
+					</center>
+					<br>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Drill VA</h2>
+								</a>
+								<a href="#">
+									<p>S/. 150</p>
+								</a>
+							</div>
+							<img src="../img/casaca1.png" width="450" height="400" class="img-fluid" alt="ropa 1">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Dark DSH</h2>
+								</a>
+								<a href="#">
+									<p>S/. 130</p>
+								</a>
+							</div>
+							<img src="../img/casaca2.png" width="450" height="400" class="img-fluid" alt="ropa 2">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Red Skate</h2>
+								</a>
+								<a href="#">
+									<p>S/. 120</p>
+								</a>
+							</div>
+							<img src="../img/casaca3.png" width="450" height="400" class="img-fluid" alt="ropa 3">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Cold Flyer</h2>
+								</a>
+								<a href="#">
+									<p>S/. 190</p>
+								</a>
+							</div>
+							<img src="../img/casaca4.png" width="450" height="400" class="img-fluid" alt="ropa 4">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Light Jean</h2>
+								</a>
+								<a href="#">
+									<p>S/. 200</p>
+								</a>
+							</div>
+							<img src="../img/casaca5.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Dark Pilot </h2>
+								</a>
+								<a href="#">
+									<p>S/. 280</p>
+								</a>
+							</div>
+							<img src="../img/casaca6.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Classic Jean</h2>
+								</a>
+								<a href="#">
+									<p>S/. 220</p>
+								</a>
+							</div>
+							<img src="../img/casaca7.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Casaca Trend Men</h2>
+								</a>
+								<a href="#">
+									<p>S/. 280</p>
+								</a>
+							</div>
+							<img src="../img/casaca8.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<center>
+							<br><br><br>
+							<h2 style="color: #f3f3f3"><b> Variedad de Polos </b> </h2>
+						</center>
+						<br>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Polo Skater Black</h2>
+								</a>
+								<a href="#">
+									<p>S/. 90</p>
+								</a>
+							</div>
+							<img src="../img/polo1_v.png" width="450" height="400" class="img-fluid" alt="ropa 1">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Polo Docker Gamer</h2>
+								</a>
+								<a href="#">
+									<p>S/. 100</p>
+								</a>
+							</div>
+							<img src="../img/polo2_v.png" width="450" height="400" class="img-fluid" alt="ropa 2">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Polo Mander Gray</h2>
+								</a>
+								<a href="#">
+									<p>S/. 120</p>
+								</a>
+							</div>
+							<img src="../img/polo3_v.png" width="450" height="400" class="img-fluid" alt="ropa 3">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Polo Klein</h2>
+								</a>
+								<a href="#">
+									<p>S/. 100</p>
+								</a>
+							</div>
+							<img src="../img/polo4_v.png" width="450" height="400" class="img-fluid" alt="ropa 4">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Polo Blanco</h2>
+								</a>
+								<a href="#">
+									<p>S/. 80</p>
+								</a>
+							</div>
+							<img src="../img/hombre3.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Polo Blue Men</h2>
+								</a>
+								<a href="#">
+									<p>S/. 110</p>
+								</a>
+							</div>
+							<img src="../img/polo5_v.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<center>
+							<br><br><br>
+							<h2 style="color: #f3f3f3"><b> Variedad de Camisas </b> </h2>
+						</center>
+						<br>
+					</div>
+
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Camisa Crammer</h2>
+								</a>
+								<a href="#">
+									<p>S/. 100</p>
+								</a>
+							</div>
+							<img src="../img/camisa2.png" width="450" height="400" class="img-fluid" alt="ropa 2">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Camisa Poit Men</h2>
+								</a>
+								<a href="#">
+									<p>S/. 100</p>
+								</a>
+							</div>
+							<img src="../img/camisa5.png" width="450" height="400" class="img-fluid" alt="ropa 4">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Camisa Dream Cuadros</h2>
+								</a>
+								<a href="#">
+									<p>S/. 150</p>
+								</a>
+							</div>
+							<img src="../img/camisa3.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Camisa Block Blue</h2>
+								</a>
+								<a href="#">
+									<p>S/. 150</p>
+								</a>
+							</div>
+							<img src="../img/camisa1.png" width="450" height="400" class="img-fluid" alt="ropa 1">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Camisa Dark Pwer</h2>
+								</a>
+								<a href="#">
+									<p>S/. 120</p>
+								</a>
+							</div>
+							<img src="../img/camisa4.png" width="450" height="400" class="img-fluid" alt="ropa 3">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Camisa Flow Men</h2>
+								</a>
+								<a href="#">
+									<p>S/. 150</p>
+								</a>
+							</div>
+							<img src="../img/camisa6.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<center>
+							<br><br><br>
+							<h2 style="color: #f3f3f3"><b> Variedad de Chaquetas </b> </h2>
+						</center>
+						<br>
+					</div>
+
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Versma</h2>
+								</a>
+								<a href="#">
+									<p>S/. 180</p>
+								</a>
+							</div>
+							<img src="../img/hombre1.png" width="450" height="400" class="img-fluid" alt="ropa 1">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Cuero</h2>
+								</a>
+								<a href="#">
+									<p>$/130</p>
+								</a>
+							</div>
+							<img src="../img/hombre12.png" width="450" height="400" class="img-fluid" alt="ropa 2">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Large Cocodrile</h2>
+								</a>
+								<a href="#">
+									<p>S/. 220</p>
+								</a>
+							</div>
+							<img src="../img/chaqueta1.png" width="450" height="400" class="img-fluid" alt="ropa 3">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Dark Green</h2>
+								</a>
+								<a href="#">
+									<p>S/. 100</p>
+								</a>
+							</div>
+							<img src="../img/chaqueta2.png" width="450" height="400" class="img-fluid" alt="ropa 4">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Style Men</h2>
+								</a>
+								<a href="#">
+									<p>S/. 230</p>
+								</a>
+							</div>
+							<img src="../img/chaqueta3.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Sport Fisher</h2>
+								</a>
+								<a href="#">
+									<p>S/. 150</p>
+								</a>
+							</div>
+							<img src="../img/chaqueta4.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Grey Style</h2>
+								</a>
+								<a href="#">
+									<p>S/. 230</p>
+								</a>
+							</div>
+							<img src="../img/chaqueta5.png" width="450" height="400" class="img-fluid" alt="ropa 5">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="ropa-container">
+							<div class="ropa-details">
+								<a href="#">
+									<h2>Chaqueta Blue Sport</h2>
+								</a>
+								<a href="#">
+									<p>S/. 180</p>
+								</a>
+							</div>
+							<img src="../img/chaqueta6.png" width="450" height="400" class="img-fluid" alt="ropa 6">
+						</div>
+					</div>
+
+				</div>
+			</div>
+	</section>
+
+	<section id="footer" class="bg-dark">
+		<div class="container">
+			<img class="img-responsive " src="../img/logo2.png" width="100" height="100"
+				class="d-inline-block align-top" alt="">
+			<ul class="list-inline">
+				<li class="list-inline-item footer-menu"><a href="welcome.php">Inicio</a></li>
+				<li class="list-inline-item footer-menu"><a href="about_c.php">Nosotros</a></li>
+				<li class="list-inline-item footer-menu"><a href="rcaballero_c.php">Ropas</a></li>
+				<li class="list-inline-item footer-menu"><a href="tendency.php">Tendencias</a></li>
+				<li class="list-inline-item footer-menu"><a href="sale.php">Descuentos</a></li>
+				<li class="list-inline-item footer-menu"><a href="contacto.php">Contactanos</a></li>
+			</ul>
+			<small>@2021 Todos los derechos reservados.</small>
+		</div>
+	</section>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
+<?php } ?>
