@@ -15,6 +15,7 @@
     $row=$result->fetch_assoc();
     
 ?>
+<?php if($_SESSION['tipo_usuario'] == 2){?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,7 +42,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="welcome.php">
 				<img class="img-responsive " src="../img/logo2.png" width="70" height="70" class="d-inline-block align-top" alt="">
 				Trend Stoore
 			</a>
@@ -54,10 +55,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#" id="inicio">Inicio</a>
+						<a class="nav-link" href="welcome.php" id="inicio">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#about" id="nosotros">Nosotros</a>
+						<a class="nav-link" href="about_c.php" id="nosotros">Nosotros</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -69,21 +70,22 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#clothes" id="rcaballero">Caballeros</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#clothes" id="niños">Niños</a>
+							<a class="dropdown-item" href="niños_c.php" id="niños">Niños</a>
 						</div>
 					</li>
+					<?php if($_SESSION['tipo_usuario'] == 2){?>
 					<li class="nav-item">
-						<a class="nav-link" href="#tendency" id="tendencia">Tendencias</a>
+						<a class="nav-link" href="tendency.php" id="tendencia">Tendencias</a>
 					</li>
-                    <?php if($_SESSION['tipo_usuario'] == 2){?>
+                    
 					<li class="nav-item">
-						<a class="nav-link" href="" id="sale">
-							Sale
+						<a class="nav-link" href="sale.php" id="sale">
+							% Descuentos
 						</a>
 					</li>
                     <?php } ?>
 					<li class="nav-item">
-						<a class="nav-link" href="#contact" id="contacto">Contactanos</a>
+						<a class="nav-link" href="contacto.php" id="contacto">Contactanos</a>
 					</li>
 					
 					<li class="nav-item">
@@ -96,15 +98,15 @@
         
 	</nav>
 	
-    <div class="panel panel-info">
-                <h2 style="color:black"><?php echo '&nbsp&nbsp'.'Bienvenid@ '.utf8_decode($row['nombre']);?></h2>
-            <br />
-        
-	</div>
+						
 	<section id="">
+		<br><br><br>
 		<div class="container">
 			<div class="panel panel-info">
-			<h2 style="color:black"><?php echo '&nbsp&nbsp'.'Bienvenid@ '.utf8_decode($row['nombre']);?></h2>
+			<h2 style="color:black"><?php echo '&nbsp'.'Bienvenid@ '.utf8_decode($row['nombre']);?></h2>
+			<h3>Gracias por ser parte de la comunidad Trend, ahora empieza conociendo
+				tus beneficios en nuestro menú.
+					</h3>
 			</div>
 		</div>
 	</section>
@@ -113,10 +115,11 @@
     <div class="container">
       <img class="img-responsive " src="../img/logo2.png" width="100" height="100" class="d-inline-block align-top" alt="">
       <ul class="list-inline">
-        <li class="list-inline-item footer-menu"><a href="index.html">Inicio</a></li>
-        <li class="list-inline-item footer-menu"><a href="about.html">Nosotros</a></li>
-        <li class="list-inline-item footer-menu"><a href="#">Ropas</a></li>
-        <li class="list-inline-item footer-menu"><a href="tendency.html">Tendencias</a></li>
+        <li class="list-inline-item footer-menu"><a href="welcome.php">Inicio</a></li>
+        <li class="list-inline-item footer-menu"><a href="about_c.php">Nosotros</a></li>
+        <li class="list-inline-item footer-menu"><a href="rdama_c.php">Ropas</a></li>
+        <li class="list-inline-item footer-menu"><a href="tendency.php">Tendencias</a></li>
+		<li class="list-inline-item footer-menu"><a href="sale.php">Descuentos</a></li>
         <li class="list-inline-item footer-menu"><a href="contacto.html">Contactanos</a></li>
       </ul>
       <small>@2021 Todos los derechos reservados.</small>
@@ -124,3 +127,4 @@
   </section>
 </body>
 </html>
+<?php } ?>
