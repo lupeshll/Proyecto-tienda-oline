@@ -38,7 +38,7 @@
 
     <style type="text/css">
 		
-    @page {
+        @page {
                 margin-top: 0.3em;
                 margin-left: 0.6em;
             }
