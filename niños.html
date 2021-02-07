@@ -18,14 +18,14 @@
 
 	<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
-	<title>Trend Stoore</title>
+	<title>Trend Stoore| Ropas niños</title>
 	<link rel="icon" href="img/logo-icon.ico">
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="index.html">
 				<img class="img-responsive " src="img/logo2.png" width="70" height="70" class="d-inline-block align-top" alt="">
 				Trend Stoore
 			</a>
@@ -37,10 +37,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#" id="inicio">Inicio</a>
+						<a class="nav-link" href="index.html" id="inicio">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#about" id="nosotros">Nosotros</a>
+						<a class="nav-link" href="about.html" id="nosotros">Nosotros</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -48,23 +48,18 @@
 							Ropas
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#clothes" id="rdama">Damas</a>
+							<a class="dropdown-item" href="rdama.html" id="rdama">Damas</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="rcaballero.html" id="rcaballero">Caballeros</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#clothes" id="niños">Niños</a>
+							<a class="dropdown-item" href="niños.html" id="niños">Niños</a>
 						</div>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#tendency" id="tendencia">Tendencias</a>
+						<a class="nav-link" href="tendency.html" id="tendencia">Tendencias</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#discount" id="sale">
-							Sale
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#contact" id="contacto">Contactanos</a>
+						<a class="nav-link" href="contacto.html" id="contacto">Contactanos</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -82,106 +77,197 @@
 			</div>
 		</div>
 	</nav>
-	<section id="clothes" style="background-color: black">
-		<div class="container-fluid">
-			<div class="content-center">
-				<h2>Lorem ipsum dolor sit amet consectetur <b>adipisicing elit.</b> </h2>
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae fuga porro mollitia
-					rem accusamus enim eius iure earum quasi, sunt ea eligendi consequuntur dolores
-					quidem corporis labore commodi. Odit, quia!</p>
-			</div>
+	<section id="clothes" style="background-color: #111113">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="content-center">
+                <h2 style="color: #f3f3f3"> Ropas variadas para niñas y niños en <b>Trend Stoore Kids</b> </h2>
+                <p style="color: #c7c3c3">Las imagenes de los productos son referenciales y las promociones tienen un stock mínimo. 
+                    <i>Cualquier pedido bajo consulta el area de <b>Contactanos</b></i>. </p>
+            </div>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="ropa-container">
-						<div class="ropa-details">
-							<a href="#">
-								<h2>Casaca Cuero</h2>
-							</a>
-							<a href="#">
-								<p>$/90</p>
-							</a>
-						</div>
-						<img src="img/niña3.jpg" width="450" height="400" class="img-fluid" alt="ropa 1">
-					</div>
-				</div>
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
 
-				
-						<div class="col-md-6">
-							<div class="ropa-container">
-								<div class="ropa-details">
-									<a href="#">
-										<h2>Polera niño</h2>
-									</a>
-									<a href="#">
-										<p>$/100</p>
-									</a>
-								</div>
-								<img src="img/niño.jpg" width="450" height="400" class="img-fluid" alt="ropa 2">
-							</div>
-						</div>
+            <div class="carousel-inner">
+              <!--Carousel Wrapper-->
+				<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+			
+                    <!--Controls-->
+                    <div class="controls-top">
+                      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+  
+                    <!--/.Controls-->
+              
+                   
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+              
+                      <!--First slide-->
+                      <div class="carousel-item active">
+              
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niña3.jpg"  alt="Card image cap">
+                          
+                              <div class="card-body">
+                                <h4 class="card-title">Casaca cuero niña</h4>
+                                <p class="card-text">Elegante casaca cuero para niñas. </p>
+                                  <h2><span class="badge badge-dark">S/. 79.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niña6.png"  alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Falda puntos negros + sombrero</h4>
+                                <p class="card-text">Hermosa falda con puntos negros </p>
+                                <h2><span class="badge badge-dark">S/. 50</span></h2>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niña5.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Casaca rosa niña</h4>
+                                <p class="card-text">Casaca Jersey rosa con cierre.</p>
+                                <h2><span class="badge badge-dark">S/. 50</span></h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              
+                      </div>
+                      <!--/.First slide-->
+              
+                      <!--Second slide-->
+                      <div class="carousel-item">
+              
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niño7.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Jeans claros + zapatillas (Talla 24-26) </h4>
+                                <p class="card-text">Jeans con bolsillos, y zapatillas Adidas blancas con 2 pegatinas .</p>
+                                  <h2><span class="badge badge-dark">S/. 99.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niño.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Gorra floreada + Polera ploma</h4>
+                                <p class="card-text">Gorra floreada y polera de algodon en color plomo.</p>
+                                  <h2><span class="badge badge-dark">S/. 79.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niño6.jpg" height="400" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Camisa cuadros niños + jeans</h4>
+                                <p class="card-text">Camisa cuadros rojo y azul, cuello camisero y pantalon jean azulado.</p>
+                                  <h2><span class="badge badge-dark">S/. 79.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              
+                      </div>
+                      <!--/.Second slide-->
+              
+                      <!--Third slide-->
+                      <div class="carousel-item">
+              
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niño.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                  card's content.</p>
+                                  <h2><span class="badge badge-dark">S/. 79.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niño.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                  card's content.</p>
+                                  <h2><span class="badge badge-dark">S/. 79.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-4 clearfix d-none d-md-block">
+                            <div class="card mb-2">
+                              <img class="card-img-top" src="img/niño.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                  card's content.</p>
+                                  <h2><span class="badge badge-dark">S/. 79.90</span></h2>
+                              </div>
+                            </div>
+                          </div>
+  
+                        </div>
+              
+                      </div>
+                      <!--/.Third slide-->
+              
+                    </div>
+                    <!--/.Slides-->
+              
+                  </div>
+                  <!--/.Carousel Wrapper-->
 
-						
-							<div class="col-md-6">
-								<div class="ropa-container">
-									<div class="ropa-details">
-										<a href="#">
-											<h2>Pantalon Detalled</h2>
-										</a>
-										<a href="#">
-											<p>$/120</p>
-										</a>
-									</div>
-									<img src="img/niña7.png" width="450" height="400" class="img-fluid" alt="ropa 3">
-								</div>
-							</div>
+            </div>
 
-						
-								<div class="col-md-6">
-									<div class="ropa-container">
-										<div class="ropa-details">
-											<a href="#">
-												<h2>Casaca Rosa</h2>
-											</a>
-											<a href="#">
-												<p>$/140</p>
-											</a>
-										</div>
-										<img src="img/niña5.jpg" width="450" height="400" class="img-fluid" alt="ropa 4">
-									</div>
-								</div>
 
-							
-									<div class="col-md-6">
-										<div class="ropa-container">
-											<div class="ropa-details">
-												<a href="#">
-													<h2>Casaca Jean</h2>
-												</a>
-												<a href="#">
-													<p>$/120</p>
-												</a>
-											</div>
-											<img src="img/niño5.jpg" width="450" height="400" class="img-fluid" alt="ropa 5">
-										</div>
-								</div>
-								
-									<div class="col-md-6">
-										<div class="ropa-container">
-											<div class="ropa-details">
-												<a href="#">
-													<h2>Chaqueta And Jean</h2>
-												</a>
-												<a href="#">
-													<p>$/250</p>
-												</a>
-											</div>
-											<img src="img/niño2.jpg" width="450" height="900" class="img-fluid" alt="ropa 6">
-										</div>
-									</div>
-				</div>
-			</div>
-	
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+	</section>
+
+	<section id="footer" class="bg-dark">
+		<div class="container">
+		  <img class="img-responsive " src="img/logo2.png" width="100" height="100" class="d-inline-block align-top" alt="">
+		  <ul class="list-inline">
+			<li class="list-inline-item footer-menu"><a href="index.html">Inicio</a></li>
+			<li class="list-inline-item footer-menu"><a href="about.html">Nosotros</a></li>
+			<li class="list-inline-item footer-menu"><a href="#">Ropas</a></li>
+			<li class="list-inline-item footer-menu"><a href="tendency.html">Tendencias</a></li>
+			<li class="list-inline-item footer-menu"><a href="contacto.html">Contactanos</a></li>
+		  </ul>
+		  <small>@2021 Todos los derechos reservados.</small>
+		</div>
 	</section>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
