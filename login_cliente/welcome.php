@@ -75,7 +75,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#tendency" id="tendencia">Tendencias</a>
 					</li>
-                    <?php if($_SESSION['tipo_usuario'] ==1){?>
+                    <?php if($_SESSION['tipo_usuario'] == 1){?>
 					<li class="nav-item">
 						<a class="nav-link" href="#discount" id="sale">
 							Sale
