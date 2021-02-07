@@ -61,8 +61,23 @@
 
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	
 </body>
 </html>
+
+<script type="text/javascript">
+    
+
+    Swal.fire({
+        icon: 'info',
+        title: 'Toma en cuenta Empleado Trend',
+        text: 'Si eres parte de la empresa inicia sesión con tu usuario asignado;'+
+                'sin embargo toma en cuenta que el login de la empresa Trend Stoore'+
+                ' es manejado por el administrador. Por otro lado, para la visualización del sistema'+
+                ' se habilito el siguiente usuario: admin y contraseña:admin.',
+        
+    });
+</script>	
 <script type="text/javascript">
     
     $(document).ready(function(){
